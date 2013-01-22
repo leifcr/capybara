@@ -6,6 +6,7 @@ Capybara::SpecHelper.spec '#find_button' do
   it "should find any button" do
     @session.find_button('med')[:id].should == "mediocre"
     @session.find_button('crap321').value.should == "crappy"
+    @session.find_button('form[crappy]').value.should == "crappy"
   end
 
   it "casts to string" do
